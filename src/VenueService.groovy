@@ -7,10 +7,10 @@ class VenueService {
         foursquareAPIhttpClient = new FoursquareAPIhttpClient()
     }
 
-    public void find_nearest_venue(String[] coordinatesAndSection) throws IOException {
+    public void find_nearest_venue(String[] coordinatesAndSection)  {
         try {
             JsonNode json_result = foursquareAPIhttpClient.findVenuesByDistance(coordinatesAndSection)
-            println(json_result)
+
             JsonNode item = json_result.get("response").get("groups").get(0).get("items")
             if (item.size() == 0) {
                 println("There is no venues on current coordinates")
@@ -25,7 +25,7 @@ class VenueService {
                         , item.get(i).get("venue").get("location").get("distance").asInt())
                 result_list.add(result_map)
             }
-            println(result_list)
+
             print_result(min_distance, result_list)
 
         } catch (IOException e) {
@@ -40,6 +40,7 @@ class VenueService {
         if (min_distance > 50) {
             println("places not found")
         } else {
+            print("Your place is ")
             println(result_list.get(0).keySet())
         }
     }
