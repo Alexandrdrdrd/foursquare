@@ -1,6 +1,6 @@
 {
   "Client_Id": "S1RRXELVBKHDP20EPG1YHNXVZ1UBMAKZ5RGU4J05GHLAMYNL",
   "client_secret": "O3BALPN4VBE1ILHBGSVEP3XCPBDBC1LMHIMUJHHXIJXRUMIZ",
-  "path": "C:/Users/1/IdeaProjects/untitled2/src/params.json",
-  "URL": "https://api.foursquare.com/v2/venues/search?client_id=%s&client_secret=%s&v=20190425&ll=%s,%s&intent=checkin&radius=100"
+  "path": "C:/Users/1/IdeaProjects/untitled2/src/params.json"
+
 }

@@ -1,4 +1,6 @@
 class CoordinateScannerService {
+    private List<String> SECTION  = ["food", "drinks", "coffee", "shops", "arts", "outdoors", "sights", "trending"]
+
 
     private boolean isDigit(String s) throws NumberFormatException {
         try {
@@ -29,7 +31,10 @@ class CoordinateScannerService {
         coordinatesAndSection[0] = longitude
         coordinatesAndSection[1] = latitude
         println "input section (One of food, drinks, coffee, shops, arts, outdoors, sights, trending)"
-        coordinatesAndSection[2] = sc.nextLine()
+        coordinatesAndSection[2] = sc.nextLine().toLowerCase()
+        if (!SECTION.contains(coordinatesAndSection[2])){
+            println("Section not found. The result may not be accurate")
+        }
         sc.close()
         return coordinatesAndSection
 
